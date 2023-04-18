@@ -1,0 +1,32 @@
+{
+  "name": "Webaker",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": 
+  "Simple and useful extension that helps reduce time spent on social sites and improve your effectiveness throughout the day. Webaker keeps track of allowed daily usage time and visualizes your activity on websites that take your attention too frequently.",
+  "icons": { 
+    "16": "/static/icons/icon16.png",
+    "48": "/static/icons/icon48.png",
+    "128": "/static/icons/icon128.png" 
+  },
+  "background": {
+    "service_worker": "/bg/index.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["/cs/index.css"],
+      "js": ["/cs/index.js"]
+    }
+  ],
+  "permissions": [
+    "scripting",
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "default_icon": "/static/icons/icon_16.png",
+  "action": {
+    "default_popup": "/popup/index.html"
+  }
+}
